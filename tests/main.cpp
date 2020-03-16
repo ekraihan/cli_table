@@ -1,5 +1,5 @@
 
-#include "../rapper.h"
+#include "../cli_table.h"
 #include <iostream>
 #include <string>
 
@@ -32,13 +32,16 @@ Content-Length: 151
 X-BroadWorks-DNC: network-address=sip:+9876543210@127.0.0.101;user=phone
 User-Agent: X-Lite release 1104o stamp 56125 v=0 o=alice 2890844526 2890844526 IN IP4 client.atlanta.example.com s=- c=IN IP4 192.0.2.101 t=0 0 m=audio 49172 RTP/AVP 0 a=rtpmap:0 PCMU/8000)";
 
+    std::string string1 = "2020-03-16T06:50:17.863Z";
+    std::string string2 = "INFO";
+    std::string string3 = "purecloudcommon::PacketTracer::long_function_name()";
     for (int i = 0; i < 10000; ++i)
     {
         tp.print_row({
-            "2020-03-16T06:50:17.863Z",
-            "INFO",
-            aSipString.c_str(),
-            "purecloudcommon::PacketTracer::long_function_name()"
+            string1,
+            string2,
+            aSipString,
+            string3
         });
     }
 
